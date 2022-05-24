@@ -1,0 +1,31 @@
+{% extends 'student_register/base.html' %} 
+
+
+{% block content %}
+    <p>Student List</p>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Path</th>
+                    <th><a href="{% url 'form' %}">Add New</a></th>
+                </tr>
+                
+            </thead>
+            <tbody>
+                
+                {% for student in students  %}
+                <tr>
+                    <td>{{student.Full_Name}}</td>
+                    <td>{{student.Path}}</td>
+                    <td>icon</td>
+                </tr>
+                {% endfor %}
+                 
+            </tbody>
+
+        </table>
+    </div>
+{% endblock content %}
+    
