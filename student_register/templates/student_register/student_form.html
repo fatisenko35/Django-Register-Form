@@ -1,13 +1,21 @@
-{% extends 'student_register/base.html' %} 
+{% extends 'student_register/base.html' %} {% block content %}
+<div class="d-flex justify-content-center align-items-center mt-5">
+  <form action="" method="POST" class="w-25" enctype="multipart/form-data">
+    {% csrf_token %}
 
-
-{% block content %}
-<form action="" method="POST" enctype="multipart/form-data">
-    {% csrf_token %} 
-    
+    <h5 class="text-start mb-2">Register Form</h5>
     {{form.as_p}}
-  
-    <input type="submit" value="Add" />
+
+    <div class="d-flex justify-content-between">
+      {% block form %}
+
+      <input type="submit" value="Add" class="btn btn-success w-100" />
+      {% endblock form %}
+
+      <a href="{% url 'list' %}" class="btn btn-secondary w-50 ms-2">
+        <i class="fa fa-outdent" aria-hidden="true"></i> Back to list</a
+      >
+    </div>
   </form>
+</div>
 {% endblock content %}
-    

@@ -20,10 +20,10 @@ class Student(models.Model):
 
     PATH = (
        
-        ("1", "Full Stack"),
-        ("2", "AWS-DevOps"),
-        ("3", "Data Science"),
-        ("4", "Cyber Security"),
+        ("Full Stack", "Full Stack"),
+        ("AWS-DevOps", "AWS-DevOps"),
+        ("Data Science", "Data Science"),
+        ("Cyber Security", "Cyber Security"),
     )
 
     Path = models.CharField(max_length=20, choices=PATH)
